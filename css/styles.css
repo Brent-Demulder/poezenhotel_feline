@@ -266,6 +266,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
 
 /* ============ SPLIT SECTION ============ */
 .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.split-section-wide { grid-template-columns: 1fr 2fr; }
 .split-visual { display: flex; justify-content: center; }
 .split-bubble { width: 300px; height: 300px; background: linear-gradient(135deg, rgba(115,109,255,0.1), rgba(121,42,230,0.06)); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
@@ -495,16 +496,21 @@ html { scroll-behavior: smooth; }
   .dropdown.open .dropdown-menu { display: block; }
   .navbar { position: relative; }
 
-  .hero-inner, .intro-inner, .split-section, .gallery-split { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .hero-inner, .intro-inner, .split-section, .split-section-wide, .gallery-split { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
   .hero-visual { order: -1; }
   .hero-cta { justify-content: center; }
   .hero-subtitle { max-width: 100%; margin-left: auto; margin-right: auto; }
-  .hero-circle, .intro-bubble, .split-bubble { width: 260px; height: 260px; }
+  .hero-circle, .intro-bubble, .split-bubble { width: 240px; height: 240px; }
   .card-grid-3 { grid-template-columns: 1fr; }
   .card-grid-2 { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
   .terms-content { padding: 2rem 1.25rem; }
   .section-intro { margin-left: auto; margin-right: auto; }
+  .praktisch-nav { top: 0; }
+  .checklist-item { text-align: left; }
+  .info-card { text-align: left; }
+  .note-box { text-align: left; }
+  .intro-quote { text-align: left; }
 }
 
 @media (max-width: 600px) {
