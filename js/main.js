@@ -80,17 +80,39 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
 
 // ============ CONTACT FORM ============
 const contactForm = document.getElementById('contactForm');
-contactForm?.addEventListener('submit', e => {
+contactForm?.addEventListener('submit', async e => {
   e.preventDefault();
   const btn = contactForm.querySelector('button[type="submit"]');
   const original = btn.textContent;
-  btn.textContent = 'Verzonden! ✓';
-  btn.style.background = '#22c55e';
+  btn.textContent = 'Versturen...';
   btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = original;
-    btn.style.background = '';
-    btn.disabled = false;
-    contactForm.reset();
-  }, 3500);
+
+  try {
+    const res = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      btn.textContent = 'Verzonden! ✓';
+      btn.style.background = '#22c55e';
+      contactForm.reset();
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3500);
+    } else {
+      throw new Error();
+    }
+  } catch {
+    btn.textContent = 'Er liep iets mis — probeer opnieuw';
+    btn.style.background = '#ef4444';
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3500);
+  }
 });
