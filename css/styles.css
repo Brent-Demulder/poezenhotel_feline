@@ -71,6 +71,44 @@ section { padding: 5rem 0; }
 }
 .banner strong { font-weight: 700; }
 
+/* ============ FAREWELL SECTION ============ */
+.farewell-section {
+  background: var(--bg);
+  padding: 4rem 0 3rem;
+}
+.farewell-card {
+  background: var(--white);
+  border-radius: var(--card-radius);
+  padding: 3rem 3.5rem;
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  margin: 0 auto;
+  border-left: 5px solid var(--primary);
+}
+.farewell-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(115,109,255,0.15);
+}
+.farewell-icon { font-size: 2rem; line-height: 1; }
+.farewell-header h2 { color: var(--primary); margin: 0; }
+.farewell-body p { color: var(--text); line-height: 1.9; margin-bottom: 1rem; }
+.farewell-body p:first-child { font-weight: 600; font-size: 1.05rem; }
+.farewell-sign {
+  margin-top: 1.75rem !important;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(115,109,255,0.15);
+  font-style: italic;
+  color: var(--secondary);
+  line-height: 1.75;
+}
+@media (max-width: 600px) {
+  .farewell-card { padding: 2rem 1.5rem; }
+}
+
 /* ============ LOGO IMAGE ============ */
 .logo-img { height: 64px; width: auto; display: block; }
 .logo-img-footer { filter: brightness(0) invert(1); height: 72px; }
